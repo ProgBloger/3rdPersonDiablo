@@ -24,9 +24,6 @@ public class CollectibleItem : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log($"Item collected: {itemName}");
-        Debug.Log($"Inventory object is null : {Managers.Inventory == null}");
-        Debug.Log($"this.gameobject null : {this.gameObject== null}");
-        
         Managers.Inventory.AddItem(itemName);
         Destroy(this.gameObject);
     }
